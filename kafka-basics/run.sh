@@ -16,7 +16,7 @@ while IFS= read -r dep; do
     CLASSPATH="$CLASSPATH:$jar"
   fi
 done < <(./gradlew -q :kafka-basics:dependencies --configuration runtimeClasspath 2>/dev/null \
-  | grep -oE '(com|org)\.[a-z0-9\.]+:[a-z0-9\.-]+:[0-9][0-9\.]+' \
+  | grep -oE '(com|org)\.[a-z0-9\.]+:[a-z0-9\.-]+:[0-9][0-9\.\-]+' \
   | sort -u)
 
 exec java -cp "$CLASSPATH" "$MAIN_CLASS"

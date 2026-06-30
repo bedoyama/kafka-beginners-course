@@ -66,5 +66,5 @@ If you prefer not to use `run.sh`, compile once:
 Then run with `java`, replacing the main class as needed:
 
 ```bash
-java -cp "kafka-basics/build/classes/java/main:$(./gradlew -q :kafka-basics:dependencies --configuration runtimeClasspath 2>/dev/null | grep -oE '(com|org)\.[a-z0-9\.]+:[a-z0-9\.-]+:[0-9][0-9\.]+' | sort -u | while IFS=: read -r g a v; do find "$HOME/.gradle/caches/modules-2/files-2.1/$g/$a/$v" -maxdepth 2 -name '*.jar' ! -name '*sources*' ! -name '*javadoc*' 2>/dev/null | head -1; done | paste -sd: -)" io.conduktor.demos.kafka.ConsumerDemoWithShutdown
+java -cp "kafka-basics/build/classes/java/main:$(./gradlew -q :kafka-basics:dependencies --configuration runtimeClasspath 2>/dev/null | grep -oE '(com|org)\.[a-z0-9\.]+:[a-z0-9\.-]+:[0-9][0-9\.\-]+' | sort -u | while IFS=: read -r g a v; do find "$HOME/.gradle/caches/modules-2/files-2.1/$g/$a/$v" -maxdepth 2 -name '*.jar' ! -name '*sources*' ! -name '*javadoc*' 2>/dev/null | head -1; done | paste -sd: -)" io.conduktor.demos.kafka.ConsumerDemoWithShutdown
 ```
