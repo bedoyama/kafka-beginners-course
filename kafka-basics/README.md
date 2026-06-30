@@ -2,6 +2,10 @@
 
 Java demos for the Kafka for Beginners course.
 
+## Intro to Kafka
+
+[What is Apache Kafka](https://www.conduktor.io/kafka/what-is-apache-kafka)
+
 ## Running from the terminal
 
 Long-running consumers are awkward to stop from IntelliJ when there is no visible exit control. Run them from a terminal instead so you can stop the process with **Ctrl+C** — especially important for `ConsumerDemoWithShutdown`, which demonstrates graceful shutdown.
