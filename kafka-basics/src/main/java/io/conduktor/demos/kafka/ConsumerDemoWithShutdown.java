@@ -61,13 +61,13 @@ public class ConsumerDemoWithShutdown {
             }
         });
 
-
-
         try {
             // subscribe to a topic
             consumer.subscribe(Arrays.asList(topic));
             // poll for data
             while (true) {
+
+                log.info("Polling");
 
                 ConsumerRecords<String, String> records =
                         consumer.poll(Duration.ofMillis(1000));
@@ -87,7 +87,5 @@ public class ConsumerDemoWithShutdown {
             consumer.close(); // close the consumer, this will also commit offsets
             log.info("The consumer is now gracefully shut down");
         }
-
-
     }
 }

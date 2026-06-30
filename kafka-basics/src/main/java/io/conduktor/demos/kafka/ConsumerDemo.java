@@ -57,10 +57,6 @@ public class ConsumerDemo {
                 log.info("Key: " + record.key() + ", Value: " + record.value());
                 log.info("Partition: " + record.partition() + ", Offset: " + record.offset());
             }
-
-
         }
-
-
     }
 }
